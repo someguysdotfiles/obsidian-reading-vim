@@ -1,0 +1,9 @@
+{
+	"id": "reading-vim",
+	"name": "Reading mode vim keys",
+	"version": "1.0.0",
+	"minAppVersion": "1.4.0",
+	"description": "Vim-style scrolling and navigation in reading mode, with cursor sync to edit mode.",
+	"author": "marco",
+	"isDesktopOnly": false
+}
