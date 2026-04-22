@@ -82,6 +82,14 @@ export default class ReadingVimPlugin extends Plugin {
 			return;
 		}
 
+		if (!shift && (key === "h" || key === "l")) {
+			evt.preventDefault();
+			evt.stopPropagation();
+			this.clearPending();
+			scroller.scrollBy({ left: key === "l" ? SCROLL_STEP_PX : -SCROLL_STEP_PX });
+			return;
+		}
+
 		if (!shift && key.length === 1 && key >= "0" && key <= "9") {
 			if (this.pendingDigits === "" && key === "0") return;
 			this.pendingDigits += key;
