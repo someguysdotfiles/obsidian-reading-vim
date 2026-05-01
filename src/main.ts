@@ -31,7 +31,7 @@ export default class ReadingVimPlugin extends Plugin {
 		this.registerMarkdownPostProcessor((el) => {
 			const paragraphs = el.querySelectorAll("p");
 			for (const p of Array.from(paragraphs)) {
-				const match = p.textContent?.match(/^file::\s*(.+?)\s*$/);
+				const match = p.textContent?.match(/^file::\s*(.+?)\s*$/m);
 				if (match) {
 					p.classList.add("reading-vim-file-tag");
 					p.dataset.filePath = match[1];
